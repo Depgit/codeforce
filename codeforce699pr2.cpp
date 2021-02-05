@@ -36,38 +36,33 @@
       
     void solve(){
       ll x,y;cin>>x>>y;
-      vector<ll> v(x), res1(x);
+      vector<ll> v(x);
       for(int i=0;i<x;i++){
           cin>>v[i];
       }
       int ans=0, res = -1;
-    
-      for(int i=0;i<x;i++){
-          ans += res1[i];
-      }
-
-        while(y--){
-            res = -1;
-            for(int i=0;i<x-1;i++){
-                if(v[i]<v[i+1]){
-                    res = i;
-                    v[i] = v[i]+1;
-                    break;
-                }
-            }
-            if(res==-1){
+    while(y--){
+        res = -1;
+        for(int i=0;i<x-1;i++){
+            if(v[i]<v[i+1]){
+                res = i;
+                v[i] = v[i]+1;
                 break;
             }
-           
         }
-   
-        if(res == -1){
-            cout<<res<<endl;
+        if(res==-1){
+            break;
         }
-        else{
-            cout<<res+1<<endl;
-        }
+
     }
+
+    if(res == -1){
+        cout<<res<<endl;
+    }
+    else{
+        cout<<res+1<<endl;
+    }
+}
      
     int main() {
     
