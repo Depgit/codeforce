@@ -99,7 +99,7 @@ int const mod = 1000000007;
 
 ll F(int n, int k) {
 	if (n == 0 || k <= 1) return 1;
-    if(memo[n][k] != 0)return memo[n][k];
+	if(memo[n][k] != 0)return memo[n][k];
 	return memo[n][k] =  (F(n - 1, k) + F(N - n, k - 1)) % mod;
 }
 
